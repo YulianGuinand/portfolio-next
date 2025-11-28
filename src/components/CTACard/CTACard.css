@@ -1,0 +1,78 @@
+.cta {
+  background-color: var(--base-100);
+}
+
+.cta .container {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding-bottom: 10rem;
+}
+
+.cta .cta-copy {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  padding: 4rem 0;
+}
+
+.cta .cta-copy .cta-col {
+  flex: 1;
+}
+
+.cta .cta-copy .cta-col:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cta .cta-card {
+  margin: 0 auto;
+  width: 70%;
+  background-color: var(--base-400);
+  color: var(--base-100);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.cta .cta-card .cta-card-copy {
+  display: flex;
+  gap: 2rem;
+}
+
+.cta .cta-card .cta-card-copy .cta-card-col {
+  flex: 1;
+}
+
+.cta .cta-card .cta-card-copy .cta-card-col:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cta .cta-card .cta-card-copy .cta-card-col:nth-child(2) p {
+  margin-bottom: 2rem;
+}
+.cta .cta-card .cta-card-copy .cta-card-col:nth-child(2) p:nth-child(2) {
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 1000px) {
+  .cta .cta-copy {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .cta .cta-card {
+    width: 100%;
+  }
+
+  .cta .cta-card .cta-card-copy {
+    flex-direction: column;
+  }
+
+  .cta .container {
+    gap: 2rem;
+  }
+}

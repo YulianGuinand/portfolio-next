@@ -1,0 +1,94 @@
+.spotlight {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--base-100);
+  overflow: hidden;
+}
+
+.spotlight .marquees {
+  position: relative;
+  width: 100%;
+  height: 150svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.spotlight .marquee-container {
+  position: relative;
+  width: 125%;
+  height: 250px;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.spotlight .marquee {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate3d(0, -50%, 0);
+  display: flex;
+  gap: 1em;
+  will-change: transform;
+}
+
+.spotlight #marquee-1 .marquee,
+.spotlight #marquee-3 .marquee {
+  transform: translate3d(-15%, -50%, 0);
+}
+
+.spotlight .marquee-img-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.spotlight .marquee-img-item.marquee-text-item {
+  flex: 1;
+}
+
+.spotlight .marquee-img-item h2 {
+  text-transform: uppercase;
+  font-family: "Big Shoulders Display", sans-serif;
+  font-weight: 900;
+  font-size: 4.25rem;
+  line-height: 0.9;
+  letter-spacing: -0.125rem;
+}
+
+.spotlight .marquee-img-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.spotlight .marquee-img-item h2 .char {
+  will-change: font-weight;
+}
+
+@media (max-width: 1000px) {
+  .spotlight .marquees {
+    height: 100svh;
+  }
+
+  .spotlight .marquee-container {
+    width: 250%;
+    height: 150px;
+  }
+
+  .spotlight #marquee-2 .marquee,
+  .spotlight #marquee-4 .marquee {
+    transform: translate3d(-35%, -50%, 0);
+  }
+
+  .spotlight .marquee-img-item h2 {
+    font-size: 2.5rem;
+  }
+}

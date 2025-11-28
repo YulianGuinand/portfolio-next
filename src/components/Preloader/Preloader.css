@@ -1,0 +1,127 @@
+.preloader h1 {
+  text-transform: uppercase;
+  font-size: 8rem;
+  line-height: 1;
+  letter-spacing: -0.5rem;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100svh;
+  background-color: var(--base-400);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  will-change: clip-path;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  background-color: var(--base-500);
+  transform: scaleX(0);
+  transform-origin: left;
+  will-change: transform;
+}
+
+.preloader-images {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25rem;
+  height: 25rem;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  will-change: clip-path;
+  overflow: hidden;
+}
+
+.preloader-images .img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  will-change: clip-path;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.preloader-images .img img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(2);
+  will-change: transform;
+}
+
+.preloader-copy {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  color: #fff;
+}
+
+.preloader-header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(60svh);
+  transform-origin: top;
+  will-change: transform;
+  z-index: 10000;
+}
+
+.preloader-header h1 {
+  text-transform: uppercase;
+  font-size: 8rem;
+  line-height: 1;
+  font-family: "Big Shoulders Display";
+  font-weight: 900;
+  color: var(--base-100);
+  text-decoration: none;
+  opacity: 0;
+}
+
+.preloader-header .char-mask,
+.preloader-copy .line-mask {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.preloader-header .char,
+.preloader-copy .line {
+  display: inline-block;
+}
+
+.preloader-copy p {
+  color: var(--base-100);
+  opacity: 0;
+}
+
+@media (max-width: 1000px) {
+  .preloader-header h1 {
+    font-size: 3rem;
+    letter-spacing: 0;
+  }
+
+  .preloader-images {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .preloader-copy {
+    width: 80%;
+    padding: 0 2rem;
+  }
+}
