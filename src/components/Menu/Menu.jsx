@@ -1,10 +1,10 @@
 "use client";
-import { useViewTransition } from "@/hooks/useViewTransition";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { SplitText } from "gsap/all";
 import { useLenis } from "lenis/react";
 import { useEffect, useRef, useState } from "react";
+import { useViewTransition } from "../../hooks/useViewTransition";
 import "./Menu.css";
 
 gsap.registerPlugin(useGSAP, SplitText);

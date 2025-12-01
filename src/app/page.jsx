@@ -1,16 +1,16 @@
 "use client";
-import Button from "@/components/Button/Button";
-import ClientReviews from "@/components/ClientReviews/ClientReviews";
-import Copy from "@/components/Copy/Copy";
-import CTACard from "@/components/CTACard/CTACard";
-import FeaturedWork from "@/components/FeaturedWork/FeaturedWork";
-import Footer from "@/components/Footer/Footer";
-import Preloader, { isInitialLoad } from "@/components/Preloader/Preloader";
-import Showreel from "@/components/Showreel/Showreel";
-import Spotlight from "@/components/Spotlight/Spotlight";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
+import Button from "../components/Button/Button";
+import ClientReviews from "../components/ClientReviews/ClientReviews";
+import Copy from "../components/Copy/Copy";
+import CTACard from "../components/CTACard/CTACard";
+import FeaturedWork from "../components/FeaturedWork/FeaturedWork";
+import Footer from "../components/Footer/Footer";
+import Preloader, { isInitialLoad } from "../components/Preloader/Preloader";
+import Showreel from "../components/Showreel/Showreel";
+import Spotlight from "../components/Spotlight/Spotlight";
 import "./home.css";
 
 gsap.registerPlugin(ScrollTrigger);

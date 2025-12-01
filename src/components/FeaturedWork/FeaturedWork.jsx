@@ -1,11 +1,11 @@
 "use client";
-import "./FeaturedWork.css";
-import { useRef } from "react";
-import { projects } from "./project.js";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import { useViewTransition } from "@/hooks/useViewTransition";
+import { useRef } from "react";
+import { useViewTransition } from "../../hooks/useViewTransition";
+import "./FeaturedWork.css";
+import { projects } from "./project.js";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 

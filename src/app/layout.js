@@ -1,5 +1,5 @@
-import ClientLayout from "@/client-layout";
 import { ViewTransitions } from "next-view-transitions";
+import ClientLayout from "../client-layout";
 import "./globals.css";
 
 export const metadata = {

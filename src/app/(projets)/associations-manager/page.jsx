@@ -1,6 +1,6 @@
 "use client";
-import Copy from "@/components/Copy/Copy";
-import Footer from "@/components/Footer/Footer";
+import Copy from "../../../components/Copy/Copy";
+import Footer from "../../../components/Footer/Footer";
 import "../sample-project.css";
 
 const Page = () => {

@@ -1,8 +1,8 @@
 "use client";
-import { useViewTransition } from "@/hooks/useViewTransition";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { useMemo, useRef } from "react";
+import { useViewTransition } from "../../hooks/useViewTransition";
 import "./work.css";
 
 gsap.registerPlugin(useGSAP);

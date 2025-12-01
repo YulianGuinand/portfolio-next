@@ -1,12 +1,12 @@
 "use client";
-import Copy from "@/components/Copy/Copy";
-import CTACard from "@/components/CTACard/CTACard";
-import Footer from "@/components/Footer/Footer";
-import Spotlight from "@/components/Spotlight/Spotlight";
-import TeamCards from "@/components/TeamCards/TeamCards";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
+import Copy from "../../components/Copy/Copy";
+import CTACard from "../../components/CTACard/CTACard";
+import Footer from "../../components/Footer/Footer";
+import Spotlight from "../../components/Spotlight/Spotlight";
+import TeamCards from "../../components/TeamCards/TeamCards";
 import "./studio.css";
 
 gsap.registerPlugin(ScrollTrigger);

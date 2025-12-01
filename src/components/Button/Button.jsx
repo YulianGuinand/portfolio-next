@@ -1,12 +1,12 @@
 "use client";
-import "./Button.css";
-import { HiLightningBolt } from "react-icons/hi";
-import { useViewTransition } from "@/hooks/useViewTransition";
-import React, { useRef } from "react";
-import gsap from "gsap";
-import { SplitText } from "gsap/SplitText";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
+import { useRef } from "react";
+import { HiLightningBolt } from "react-icons/hi";
+import { useViewTransition } from "../../hooks/useViewTransition";
+import "./Button.css";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 

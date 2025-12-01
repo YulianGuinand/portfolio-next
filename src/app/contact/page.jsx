@@ -1,7 +1,7 @@
 "use client";
-import Button from "@/components/Button/Button";
-import Copy from "@/components/Copy/Copy";
 import { useEffect, useRef } from "react";
+import Button from "../../components/Button/Button";
+import Copy from "../../components/Copy/Copy";
 import "./contact.css";
 
 const Page = () => {

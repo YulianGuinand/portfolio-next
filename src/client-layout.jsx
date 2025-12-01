@@ -1,6 +1,6 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
 import { ReactLenis } from "lenis/react";
+import { useEffect, useRef, useState } from "react";
 import Menu from "./components/Menu/Menu";
 
 export default function ClientLayout({ children }) {
