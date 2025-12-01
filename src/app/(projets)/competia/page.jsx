@@ -8,25 +8,8 @@ const Page = () => {
     <div className="sample-project-page">
       <section className="project-header">
         <Copy delay={0.75}>
-          <p className="lg">Architecture Hybride</p>
-          <h1>Association Manager</h1>
-
-          <a
-            href="/project/associations-manager/AP3-CDC.pdf"
-            target="_blank"
-            className="project-link"
-          >
-            Voir le cahier des charges <span aria-hidden="true">→</span>
-          </a>
-
-          <a
-            href="/project/associations-manager/AP3-CDF.pdf"
-            target="_blank"
-            className="project-link"
-          >
-            Voir le cahier des charges fonctionnel{" "}
-            <span aria-hidden="true">→</span>
-          </a>
+          <p className="lg">Architecture FullStack</p>
+          <h1>Competia</h1>
         </Copy>
       </section>
 
@@ -41,15 +24,16 @@ const Page = () => {
           <div className="details">
             <p>Concept</p>
             <h3>
-              Une solution de gestion centralisée pour associations combinant la
-              puissance d'une application lourde et la flexibilité du web.
+              Competia est une plateforme d’analyse de CV et d&aops;offres basée
+              sur un ATS qui détecte les mots-clés manquants et propose des
+              optimisations immédiates.
             </h3>
           </div>
           <div className="details">
             <h3>
-              Le dashboard desktop permet le pilotage administratif, tandis que
-              l'API dédiée gère la persistance des données et l'automatisation
-              des formulaires complexes.
+              Deux portails : un pour les candidats afin d&apos;améliorer leur
+              CV, un pour les coachs pour accompagner, corriger et gérer les
+              offres. Simple, rapide et centralisé.
             </h3>
           </div>
 
@@ -65,7 +49,7 @@ const Page = () => {
 
           <div className="details">
             <p>Technologies</p>
-            <h3>C# / WPF / ASP.NET / Laravel </h3>
+            <h3>Nextjs / Tailwind / Goland / Postgres </h3>
           </div>
 
           <div className="details">
