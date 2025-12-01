@@ -44,17 +44,7 @@ const Page = () => {
 
           <div className="details">
             <p>Forme</p>
-            <h3>Application Lourde & API</h3>
-          </div>
-
-          <div className="details">
-            <p>Technologies</p>
-            <h3>Nextjs / Tailwind / Goland / Postgres </h3>
-          </div>
-
-          <div className="details">
-            <p>Cadre</p>
-            <h3>Projet Académique (BTS SIO)</h3>
+            <h3>Application Web</h3>
           </div>
         </Copy>
       </section>
