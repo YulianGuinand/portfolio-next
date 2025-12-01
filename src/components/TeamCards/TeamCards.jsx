@@ -1,10 +1,10 @@
 "use client";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 import "./TeamCards.css";
 import { teamMembers } from "./teamMembers.js";
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -199,7 +199,10 @@ export default function TeamCards() {
       {/* desktop animated section */}
       <section className="sticky team-desktop" ref={stickyRef}>
         <div className="sticky-header" ref={headerRef}>
-          <h1>Compétences / Services</h1>
+          <h1>
+            Compétences <br />
+            Services
+          </h1>
         </div>
         {teamMembers.map((m, idx) => (
           <div
