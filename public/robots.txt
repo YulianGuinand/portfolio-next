@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.yulianguinand.fr
+
+# Sitemaps
+Sitemap: https://www.yulianguinand.fr/sitemap.xml
