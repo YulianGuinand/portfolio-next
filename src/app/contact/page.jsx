@@ -274,7 +274,7 @@ const Page = () => {
             </Copy>
           </div>
           <Copy delay={2} animateOnScroll={false}>
-            <p className="sm">&copy; Polite Chaos</p>
+            <p className="sm">&copy; Yulian Guinand</p>
           </Copy>
         </div>
       </div>

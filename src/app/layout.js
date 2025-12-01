@@ -4,11 +4,11 @@ import "./globals.css";
 
 export const metadata = {
   title: "Yulian Guinand | Portfolio",
-  description: "Créé par Yulian Guinand",
+  description: "Portfolio de Yulian Guinand",
   icons: {
-    icon: "/site-logo.png",
-    shortcut: "/site-logo.png",
-    apple: "/site-logo.png",
+    icon: "./favicon.ico",
+    shortcut: "./favicon.ico",
+    apple: "./favicon.ico",
   },
 };
 

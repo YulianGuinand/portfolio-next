@@ -16,8 +16,8 @@ const Page = () => {
     () => [
       {
         index: "01",
-        name: "Studio-Pogo",
-        href: "/sample-project",
+        name: "Yotion",
+        href: "/yotion",
         variant: "variant-1",
         images: [
           "/work/work_1_1.jpg",
@@ -27,8 +27,8 @@ const Page = () => {
       },
       {
         index: "02",
-        name: "Projets E4",
-        href: "/sample-project",
+        name: "Doc's Dev",
+        href: "/docs-dev",
         variant: "variant-2",
         images: [
           "/work/work_2_1.jpg",
@@ -38,8 +38,8 @@ const Page = () => {
       },
       {
         index: "03",
-        name: "Veille Tech",
-        href: "/sample-project",
+        name: "Send It",
+        href: "/send-it",
         variant: "variant-2",
         images: [
           "/work/work_3_1.jpg",
@@ -49,8 +49,8 @@ const Page = () => {
       },
       {
         index: "04",
-        name: "Expérimentations",
-        href: "/sample-project",
+        name: "Association Manager",
+        href: "/association-manager",
         variant: "variant-3",
         images: [
           "/work/work_4_1.jpg",
@@ -60,8 +60,8 @@ const Page = () => {
       },
       {
         index: "05",
-        name: "Hackathon",
-        href: "/sample-project",
+        name: "Competia",
+        href: "/competia",
         variant: "variant-1",
         images: [
           "/work/work_5_1.jpg",
@@ -71,8 +71,8 @@ const Page = () => {
       },
       {
         index: "06",
-        name: "Open Source",
-        href: "/sample-project",
+        name: "Engagement Leucemie",
+        href: "/engagement-leucemie",
         variant: "variant-2",
         images: [
           "/work/work_6_1.jpg",

@@ -1,11 +1,11 @@
 "use client";
-import "./Menu.css";
-import { useRef, useState, useEffect } from "react";
+import { useViewTransition } from "@/hooks/useViewTransition";
+import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { SplitText } from "gsap/all";
-import { useGSAP } from "@gsap/react";
 import { useLenis } from "lenis/react";
-import { useViewTransition } from "@/hooks/useViewTransition";
+import { useEffect, useRef, useState } from "react";
+import "./Menu.css";
 
 gsap.registerPlugin(useGSAP, SplitText);
 
@@ -32,10 +32,10 @@ const Menu = ({ pageRef }) => {
   const { navigateWithTransition } = useViewTransition();
 
   const menuItems = [
-    { label: "Home", route: "/" },
-    { label: "Work", route: "/work" },
-    { label: "Studio", route: "/studio" },
-    { label: "Stories", route: "/stories" },
+    { label: "Accueil", route: "/" },
+    { label: "Projets", route: "/work" },
+    { label: "A propos", route: "/studio" },
+    { label: "Parcours", route: "/stories" },
     { label: "Contact", route: "/contact" },
   ];
 
@@ -494,24 +494,24 @@ const Menu = ({ pageRef }) => {
             }}
           >
             <div className="menu-content-group">
-              <p>&copy; Polite Chaos</p>
-              <p>Seaside Studio Block</p>
-              <p>Oslo</p>
+              <p>&copy; Yulian Guinand</p>
+              <p>Dole / Besançon / Lons le Saunier</p>
+              <p>Jura, France</p>
             </div>
 
             <div className="menu-content-group">
               <p>Edition</p>
-              <p>Late Vol. 04</p>
+              <p>2025</p>
             </div>
 
             <div className="menu-content-group">
-              <p>Say Hello</p>
-              <p>hi@politechaos.com</p>
+              <p>Passez le bonjour</p>
+              <p>yulianguinand@etik.com</p>
             </div>
 
             <div className="menu-content-group">
-              <p>Hotline</p>
-              <p>+47 9824 554321</p>
+              <p>Téléphone</p>
+              <p>07 84 95 35 53</p>
             </div>
           </div>
           <div
@@ -521,32 +521,35 @@ const Menu = ({ pageRef }) => {
             }}
           >
             <div className="menu-content-group">
-              <p>Field Log</p>
+              <p>Réseaux</p>
 
-              <a href="https://www.instagram.com/codegridweb/" target="_blank">
-                Instagram
+              <a href="https://github.com/YulianGuinand/" target="_blank">
+                Github
               </a>
 
-              <a href="https://www.youtube.com/@codegrid" target="_blank">
-                YouTube
+              <a
+                href="https://www.linkedin.com/in/yulian-guinand/"
+                target="_blank"
+              >
+                Linkedin
               </a>
             </div>
 
             <div className="menu-content-group">
-              <p>Language</p>
-              <p>Human</p>
+              <p>Langage</p>
+              <p>Humain</p>
             </div>
 
             <div className="menu-content-group">
               <p>Credits</p>
-              <p>Made by Codegrid</p>
-              <p>MWT. OCT2025</p>
+              <p>Créé par Yulian</p>
+              <p>Portfolio. NOV2025</p>
             </div>
           </div>
         </div>
 
         <div className="menu-img">
-          <img ref={menuImageRef} src="/menu/menu_img.jpg" alt="" />
+          <img ref={menuImageRef} src="/menu/menu_img.png" alt="" />
         </div>
 
         <div className="menu-links-wrapper" ref={menuLinksWrapperRef}>

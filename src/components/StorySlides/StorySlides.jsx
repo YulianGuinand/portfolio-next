@@ -1,9 +1,9 @@
 "use client";
-import "./StorySlides.css";
-import { useEffect, useRef } from "react";
-import { stories } from "./stories.js";
 import { gsap } from "gsap";
+import { useEffect, useRef } from "react";
 import Button from "../Button/Button.jsx";
+import { stories } from "./stories.js";
+import "./StorySlides.css";
 
 export default function StorySlides() {
   const storiesContainerRef = useRef(null);
@@ -277,8 +277,8 @@ export default function StorySlides() {
 
       <div className="stories-footer">
         <div className="container">
-          <p className="sm">Creative Index</p>
-          <p className="sm">( Since 2025 )</p>
+          <p className="sm">Developpeur</p>
+          <p className="sm">( Depuis 2023 )</p>
         </div>
       </div>
 
@@ -294,11 +294,11 @@ export default function StorySlides() {
 
           <div className="profile">
             <div className="profile-icon">
-              <img src="/stories/profile-1.png" alt="" />
+              <img src="/stories/profile-1.jpg" alt="" />
             </div>
 
             <div className="profile-name">
-              <p>Behance</p>
+              <p>Formation</p>
             </div>
           </div>
         </div>
