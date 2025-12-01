@@ -1,0 +1,243 @@
+.folders {
+  width: 100%;
+  height: 100svh;
+  background-color: var(--base-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.folders .row {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.folders a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+.folders .folder {
+  position: relative;
+  flex: 1;
+  height: 210px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.folders .row:nth-child(2) a:nth-child(1) {
+  flex: 2;
+}
+
+.folders .row:nth-child(2) a:nth-child(2) {
+  flex: 3;
+}
+
+.folders .folder-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25rem;
+  height: 100%;
+  pointer-events: none;
+}
+
+.folders .folder-preview-img {
+  position: absolute;
+  top: 50%;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.folders .folder-preview-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.folders .folder-preview-img:nth-child(1) {
+  left: 20%;
+  transform-origin: top left;
+}
+
+.folders .folder-preview-img:nth-child(2) {
+  left: 50%;
+  transform-origin: center;
+}
+
+.folders .folder-preview-img:nth-child(3) {
+  left: 80%;
+  transform-origin: top right;
+}
+
+.folders .folder-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.folders .folder-index {
+  position: relative;
+  width: 40%;
+  padding: 1rem;
+  border-top-left-radius: 0.75rem;
+}
+
+.folders .folder-index::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 99%;
+  height: 101%;
+  aspect-ratio: 1;
+  clip-path: polygon(0 0, 25% 0, 100% 100%, 0% 100%);
+}
+
+.folders .folder-index p {
+  text-transform: uppercase;
+  font-family: "Geist Mono";
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: color 250ms ease;
+  line-height: 1;
+}
+
+.folders .folder-name {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding: 0 0.25rem;
+  padding-left: 2rem;
+  border-top-right-radius: 0.75rem;
+}
+
+.folders .folder-name h1 {
+  font-size: 3rem;
+  transition: color 250ms ease;
+  line-height: 1;
+  letter-spacing: -0.05rem;
+}
+
+.folders .folder-index,
+.folders .folder-index::after,
+.folders .folder-name {
+  transition: background-color 250ms ease;
+}
+
+.folders .folder.variant-1 .folder-index,
+.folders .folder.variant-1 .folder-index::after,
+.folders .folder.variant-1 .folder-name {
+  background-color: var(--variant-1);
+}
+
+.folders .folder.variant-2 .folder-index,
+.folders .folder.variant-2 .folder-index::after,
+.folders .folder.variant-2 .folder-name {
+  background-color: var(--variant-2);
+  color: #fff;
+}
+
+.folders .folder.variant-3 .folder-index,
+.folders .folder.variant-3 .folder-index::after,
+.folders .folder.variant-3 .folder-name {
+  background-color: var(--variant-3);
+}
+
+.folders .folder.disabled .folder-index,
+.folders .folder.disabled .folder-index::after,
+.folders .folder.disabled .folder-name {
+  background-color: var(--disabled-folder-bg);
+}
+
+.folders .folder.disabled p,
+.folders .folder.disabled h1 {
+  color: var(--disabled-folder-fg);
+}
+
+.folders .row:nth-child(1) {
+  bottom: -13rem;
+}
+
+.folders .row:nth-child(2) {
+  bottom: -7.5rem;
+}
+
+.folders .row:nth-child(3) {
+  bottom: -2rem;
+}
+
+@media (max-width: 1000px) {
+  .folders h1 {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .folders .row {
+    flex-direction: column;
+    bottom: 0 !important;
+    padding: 1.25rem 1.25rem 0 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .folders .folder {
+    margin-bottom: 0;
+    height: 200px;
+    border-radius: 1rem !important;
+    overflow: hidden;
+  }
+
+  .folders .folder-preview {
+    display: none;
+  }
+
+  .folders .folder-name {
+    padding: 0rem 2rem 2rem;
+    border-top-right-radius: 0 !important;
+  }
+
+  .folders .folder-name h1 {
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .folders .folder-index {
+    padding: 1.25rem;
+    width: 100%;
+    border-top-left-radius: 0 !important;
+  }
+
+  .folders .row:nth-child(2) .folder.variant-2 .folder-index,
+  .folders .row:nth-child(2) .folder.variant-2 .folder-index::after,
+  .folders .row:nth-child(2) .folder.variant-2 .folder-name {
+    background-color: var(--variant-3);
+  }
+
+  .folders .row:nth-child(2) .folder.variant-3 .folder-index,
+  .folders .row:nth-child(2) .folder.variant-3 .folder-index::after,
+  .folders .row:nth-child(2) .folder.variant-3 .folder-name {
+    background-color: var(--variant-2);
+    color: var(--base-100);
+  }
+
+  .folders {
+    padding: 15rem 0;
+  }
+
+  .folders,
+  .folders .row {
+    height: max-content;
+  }
+}
