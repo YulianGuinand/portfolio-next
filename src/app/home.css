@@ -1,0 +1,145 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  background-color: var(--base-100);
+  overflow: hidden;
+}
+
+.hero .container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.hero .container .hero-content-main {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.hero .container .hero-content-main .hero-footer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero .container .hero-content-main .hero-footer p.mn {
+  color: var(--base-300);
+}
+
+.hero .container .hero-footer-outer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+}
+
+.hero .container .hero-footer-outer div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.featured-work {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 8rem 0 6rem 0;
+  background-color: var(--base-100);
+  overflow: hidden;
+}
+
+.featured-work .featured-work-header-content {
+  margin: 0 auto;
+  width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+  text-align: center;
+}
+
+.featured-work .featured-work-header {
+  width: 50%;
+}
+
+.featured-work .featured-work-header-content .arrow {
+  width: 3rem;
+}
+
+.featured-work .featured-work-header-content .featured-work-header-copy {
+  width: 50%;
+}
+
+.client-reviews-header-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--base-100);
+  overflow: hidden;
+}
+
+.client-reviews-header-container .client-reviews-header-content {
+  margin: 0 auto;
+  width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+  text-align: center;
+}
+
+.client-reviews-header-container .client-reviews-header {
+  width: 50%;
+}
+
+.client-reviews-header-container .client-reviews-header-content .arrow {
+  width: 3rem;
+}
+
+.client-reviews-header-container
+  .client-reviews-header-content
+  .client-reviews-header-copy {
+  width: 50%;
+}
+
+@media (max-width: 1000px) {
+  .hero .container .hero-content-main,
+  .hero .container .hero-content-main .hero-footer {
+    width: 100%;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .featured-work .featured-work-header,
+  .featured-work .featured-work-header-content,
+  .featured-work .featured-work-header-content .featured-work-header-copy,
+  .client-reviews-header-container .client-reviews-header,
+  .client-reviews-header-container .client-reviews-header-content,
+  .client-reviews-header-container
+    .client-reviews-header-content
+    .client-reviews-header-copy {
+    width: 100%;
+  }
+
+  .featured-work-list {
+    padding: 8rem 0 !important;
+  }
+
+  .featured-work-list .row {
+    width: 100% !important;
+    flex-direction: column;
+  }
+}
