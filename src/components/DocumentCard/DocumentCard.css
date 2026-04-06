@@ -1,0 +1,202 @@
+.document-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--base-100);
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Color variants */
+.document-card--cv {
+  border-color: var(--accent-1);
+  --current-color: var(--accent-1);
+}
+
+.document-card--e5 {
+  border-color: var(--accent-2);
+  --current-color: var(--accent-2);
+}
+
+.document-card--competence {
+  border-color: var(--accent-5);
+  --current-color: var(--accent-5);
+}
+
+.document-card--e4 {
+  border-color: var(--accent-3);
+  --current-color: var(--accent-3);
+}
+
+.document-card--veille {
+  border-color: var(--accent-4);
+  --current-color: var(--accent-4);
+}
+
+.document-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.document-card-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--base-400);
+  color: var(--base-100);
+  border-radius: 0.75rem;
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+
+.document-card--cv .document-card-icon {
+  background-color: var(--accent-1);
+  color: var(--base-100);
+}
+
+.document-card--e5 .document-card-icon {
+  background-color: var(--accent-2);
+  color: var(--base-100);
+}
+
+.document-card--competence .document-card-icon {
+  background-color: var(--accent-5);
+  color: var(--base-100);
+}
+
+.document-card--e4 .document-card-icon {
+  background-color: var(--accent-3);
+  color: var(--base-100);
+}
+
+.document-card--veille .document-card-icon {
+  background-color: var(--accent-4);
+  color: var(--base-100);
+}
+
+.document-card-badge {
+  background-color: var(--base-400);
+  color: var(--base-100);
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.5rem;
+  font-family: "Geist Mono";
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.document-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.document-card-title {
+  font-family: "Big Shoulders Display";
+  font-size: 1.75rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.05rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.document-card-description {
+  font-family: "PP Neue Montreal";
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--base-300);
+  margin: 0;
+}
+
+.document-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.document-card-cta {
+  font-family: "PP Pangram Sans";
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--base-400);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.document-card-cta .arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+}
+
+.document-card:hover .document-card-cta .arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .document-card {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .document-card-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .document-card-title {
+    font-size: 1.35rem;
+  }
+
+  .document-card-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .document-card {
+    padding: 1.25rem;
+    gap: 0.75rem;
+  }
+
+  .document-card-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.25rem;
+  }
+
+  .document-card-title {
+    font-size: 1.1rem;
+  }
+
+  .document-card-description {
+    font-size: 0.85rem;
+  }
+
+  .document-card-badge {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
+}

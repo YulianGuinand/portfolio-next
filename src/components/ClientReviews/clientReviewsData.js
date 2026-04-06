@@ -7,7 +7,7 @@ export const clientReviewsData = [
   },
   {
     review: "Une rigueur exemplaire dans le code et la gestion de projet.",
-    clientName: "[Prof]",
+    clientName: "Kyllian Bletrix",
     clientCompany: "Lycée Mont Roland",
   },
 ];

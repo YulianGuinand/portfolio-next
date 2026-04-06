@@ -1,0 +1,138 @@
+.documents-section {
+  position: relative;
+  width: 100%;
+  background-color: var(--base-100);
+  padding: 8rem 2rem;
+  overflow: hidden;
+}
+
+.documents-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.documents-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.documents-title {
+  font-family: "Big Shoulders Display";
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.15rem;
+  text-transform: uppercase;
+  color: var(--base-400);
+  margin: 0;
+}
+
+.documents-subtitle {
+  font-family: "PP Neue Montreal";
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--base-300);
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.documents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.documents-grid > * {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.documents-grid > *:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.documents-grid > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.documents-grid > *:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.documents-grid > *:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.documents-grid > *:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .documents-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .documents-section {
+    padding: 5rem 1.5rem;
+  }
+
+  .documents-container {
+    gap: 3rem;
+  }
+
+  .documents-title {
+    font-size: 3rem;
+    letter-spacing: -0.1rem;
+  }
+
+  .documents-subtitle {
+    font-size: 1rem;
+  }
+
+  .documents-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .documents-section {
+    padding: 3rem 1rem;
+  }
+
+  .documents-title {
+    font-size: 2rem;
+    letter-spacing: -0.05rem;
+  }
+
+  .documents-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .documents-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

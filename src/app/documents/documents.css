@@ -1,0 +1,7 @@
+.documents {
+  width: 100%;
+  background-color: var(--base-100);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
