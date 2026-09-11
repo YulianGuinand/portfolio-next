@@ -1,0 +1,84 @@
+.optimized-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  background-color: hsl(0 0% 10%);
+  border-radius: inherit;
+}
+
+/* Shimmer Skeleton Loader (Composited GPU Transform) */
+.image-skeleton {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: hsl(0 0% 11%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+}
+
+.image-skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translate3d(-100%, 0, 0);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 100%
+  );
+  animation: imageShimmer 1.6s infinite ease-in-out;
+}
+
+@keyframes imageShimmer {
+  100% {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+/* Spinner discret optionnel (ex: Lightbox) */
+.image-spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid hsl(0 0% 25%);
+  border-top-color: hsl(0 0% 85%);
+  border-radius: 50%;
+  animation: imageSpin 0.8s linear infinite;
+}
+
+@keyframes imageSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Transitions douces au chargement de l'image */
+.optimized-image {
+  display: block;
+}
+
+.optimized-image.img-loading {
+  opacity: 0;
+  transform: scale(1.02);
+}
+
+.optimized-image.img-loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Fallback en cas d'erreur de chargement */
+.image-error-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(0 0% 12%);
+  color: var(--dark-text-tertiary);
+  font-size: 12px;
+  padding: 1em;
+  text-align: center;
+}

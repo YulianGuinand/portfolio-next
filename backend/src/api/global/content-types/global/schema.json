@@ -1,0 +1,51 @@
+{
+  "kind": "singleType",
+  "collectionName": "globals",
+  "info": {
+    "singularName": "global",
+    "pluralName": "globals",
+    "displayName": "Global Settings",
+    "description": "Global website settings, hero text, dock links and default SEO"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "siteName": {
+      "type": "string",
+      "default": "Yulian Guinand"
+    },
+    "siteBrand": {
+      "type": "string",
+      "default": "Y. Guinand"
+    },
+    "heroTitle": {
+      "type": "string",
+      "default": "Développement Web & Solutions Digitales"
+    },
+    "heroSubtitle": {
+      "type": "string",
+      "default": "Par Yulian Guinand"
+    },
+    "defaultSeoTitle": {
+      "type": "string",
+      "default": "Yulian Guinand — Développement Web & Solutions Digitales"
+    },
+    "defaultSeoDescription": {
+      "type": "text",
+      "default": "Portfolio officiel de Yulian Guinand. Concepteur développeur web & architectures fullstack (Next.js, TypeScript, Golang, PHP, C#). BTS SIO option SLAM."
+    },
+    "defaultOgImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "dockLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.dock-item"
+    }
+  }
+}

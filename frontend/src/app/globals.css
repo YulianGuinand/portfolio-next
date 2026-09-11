@@ -1,169 +1,172 @@
-@import "./fonts.css";
+@import "../components/Dock/dock.css";
+@import "../components/OptimizedImage/OptimizedImage.css";
+@import "./photos/photos.css";
+@import "./work/work.css";
+@import "./projects/projects.css";
+@import "./documents/documents.css";
+@import "./work/[slug]/project-detail.css";
 
 :root {
-  --base-100: #e3e3db;
-  --base-200: #ccccc4;
-  --base-300: #8c7e77;
-  --base-400: #1a1614;
-  --base-500: #ff6e14;
+  font-family:
+    var(--font-urbanist), "Urbanist", Inter, system-ui, Avenir, Helvetica,
+    Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-  --accent-1: #3d2fa9;
-  --accent-2: #a92f78;
-  --accent-3: #ff3d33;
-  --accent-4: #785f47;
-  --accent-5: #2f72a9;
-
-  --variant-1: var(--base-200);
-  --variant-2: var(--base-400);
-  --variant-3: var(--base-500);
-  --disabled-folder-bg: #d4d7d0;
-  --disabled-folder-fg: #989b95;
+  --dark-bg-color: hsl(0 0% 7.5%);
+  --dark-text-color: hsl(0 0% 98%);
+  --dark-text-secondary: hsl(0 0% 66%);
+  --dark-text-tertiary: hsl(0 0% 54%);
+  --dark-btn-bg: hsl(0 0% 12.5%);
+  --dark-card-bg: hsl(0 0% 10%);
+  --dark-card-border: hsl(0 0% 15%);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
 }
 
+html,
 body {
-  background-color: #000;
-  color: var(--base-400);
-  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--dark-bg-color);
+  color: var(--dark-text-color);
 }
 
-h1,
-h2,
-h3,
-h4 {
-  text-transform: uppercase;
-  font-family: "Big Shoulders Display";
-  font-weight: 900;
-  line-height: 0.9;
-  letter-spacing: -0.125rem;
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-h1 {
-  font-size: 8rem;
-}
-
-h2 {
-  font-size: 6rem;
-  letter-spacing: -0.2rem;
-}
-
-h3 {
-  font-size: 5rem;
-  letter-spacing: -0.15rem;
-}
-
-h4 {
-  font-size: 4rem;
-  letter-spacing: -0.1rem;
-}
-
-p {
-  font-family: "PP Neue Montreal";
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.2;
-}
-
-p.lg {
-  font-size: 1.75rem;
-  font-weight: 400;
-  line-height: 1.15;
-}
-
-p.sm,
-a.sm {
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: "Geist Mono";
-  font-size: 0.85rem;
-  font-weight: 500;
-  line-height: 1.15;
-  color: var(--base-300);
-  letter-spacing: 0.1rem;
-}
-
-p.cap {
-  text-transform: uppercase;
-  font-family: "PP Pangram Sans";
-  font-size: 0.9rem;
-  font-weight: 900;
-  -webkit-font-smoothing: antialiased;
+.container.page-projects,
+.container.page-post {
+  padding: 0.5em;
+  width: 50%;
+  margin: 5em auto;
 }
 
 .container {
-  width: 100%;
-  height: 100%;
-  padding: 2rem;
-  max-width: 2000px;
-  margin: 0 auto;
+  padding: 0.5em;
 }
 
-.page-transition-overlay {
+h1 {
+  color: var(--dark-text-color);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+p {
+  text-decoration: none;
+  color: var(--dark-text-color);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  width: 100%;
+  border-radius: 8px;
+  padding: 1em 0;
+  margin-top: 0.3em;
+  background-color: var(--dark-btn-bg);
+  outline: none;
+  border: none;
+  color: var(--dark-text-color);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: hsla(0, 0%, 18%, 0.233);
+}
+
+.site-brand {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  pointer-events: none;
+  top: 2em;
+  right: 2em;
+  z-index: 100000;
+  color: var(--dark-text-color);
+  font-family: var(--font-urbanist), "Urbanist", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  user-select: none;
 }
 
-.page-transition-overlay svg {
-  width: 100%;
-  height: 100%;
+.site-brand:hover {
+  opacity: 0.7;
 }
 
-.page-transition-overlay .overlay__path {
-  fill: var(--base-500);
-  stroke: none;
-}
-
-@media (max-width: 1000px) {
-  h1 {
-    font-size: 3rem;
+@media (max-width: 900px) {
+  .site-brand {
+    top: 1.5em;
+    right: 1.5em;
+    font-size: 14px;
   }
 
-  h2 {
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
-
-  h4 {
-    font-size: 1rem;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4 {
-    letter-spacing: 0 !important;
-  }
-
-  p.lg {
-    font-size: 1.125rem;
-  }
-
-  p.sm {
-    font-size: 0.8rem;
-    letter-spacing: 0.05rem;
-  }
-
-  .container {
-    padding: 1.25rem;
+  .container.page-projects,
+  .container,
+  .container.page-post {
+    width: 100%;
   }
 }
 
-@media (min-width: 2400px) {
-  h1 {
-    font-size: 10rem;
-  }
+/* Home / Hero */
+.hero-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 100000;
+}
+
+.hero-subtitle {
+  color: var(--dark-text-secondary);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: 2px;
+}
+
+.live-clock {
+  position: absolute;
+  top: 2em;
+  left: 2em;
+  z-index: 100000;
+}
+
+.live-clock p {
+  font-family: var(--font-jetbrains), "JetBrains Mono", monospace;
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--dark-text-tertiary);
+}
+
+/* Accessibilité et SEO (Masquage visuel tout en restant accessible aux lecteurs d'écran et robots) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }

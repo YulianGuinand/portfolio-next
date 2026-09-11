@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_layout_dock_items",
+  "info": {
+    "displayName": "DockItem",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "path": {
+      "type": "string",
+      "required": true
+    },
+    "iconKey": {
+      "type": "enumeration",
+      "enum": [
+        "home",
+        "palette",
+        "folder",
+        "camera",
+        "file",
+        "linkedin",
+        "github",
+        "envelope"
+      ],
+      "required": true
+    },
+    "external": {
+      "type": "boolean",
+      "default": false
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

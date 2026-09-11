@@ -1,7 +1,118 @@
-.documents {
-  width: 100%;
-  background-color: var(--base-100);
+.page-documents {
+  padding: 0.5em;
+  width: 50%;
+  margin: 5em auto;
+}
+
+.documents-header {
+  margin-bottom: 2.5em;
+}
+
+.documents-header h1 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 34px;
+  margin-bottom: 0.35em;
+}
+
+.documents-header p {
+  color: var(--dark-text-secondary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.documents-grid {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  gap: 1em;
+}
+
+.document-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25em;
+  background-color: var(--dark-card-bg);
+  border: 1px solid var(--dark-card-border);
+  border-radius: 10px;
+  gap: 1.5em;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.document-card:hover {
+  border-color: hsl(0 0% 25%);
+  background-color: hsl(0 0% 12%);
+}
+
+.document-card-info {
+  flex: 1;
+}
+
+.document-card-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--dark-text-tertiary);
+  margin-bottom: 0.35em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.document-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.35em;
+}
+
+.document-card-desc {
+  font-size: 13.5px;
+  color: var(--dark-text-secondary);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.document-card-action {
+  flex-shrink: 0;
+}
+
+.document-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.6em 1em;
+  border-radius: 6px;
+  background-color: var(--dark-btn-bg);
+  border: 1px solid var(--dark-card-border);
+  color: var(--dark-text-color);
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.document-download-btn:hover {
+  background-color: hsl(0 0% 20%);
+  border-color: hsl(0 0% 30%);
+}
+
+@media (max-width: 900px) {
+  .page-documents {
+    width: 100%;
+  }
+
+  .document-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .document-card-action {
+    width: 100%;
+  }
+
+  .document-download-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }

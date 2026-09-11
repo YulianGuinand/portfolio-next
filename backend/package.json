@@ -5,6 +5,7 @@
   "description": "A Strapi application",
   "scripts": {
     "build": "strapi build",
+    "seed": "npm run build && node src/scripts/seed-runner.js",
     "console": "strapi console",
     "deploy": "strapi deploy",
     "dev": "strapi develop",
@@ -19,10 +20,13 @@
     "@strapi/plugin-cloud": "5.53.0",
     "@strapi/plugin-users-permissions": "5.53.0",
     "@strapi/strapi": "5.53.0",
+    "@types/pg": "^8.23.1",
     "better-sqlite3": "12.8.0",
+    "pg": "^8.23.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.30.3",
+    "strapi-provider-upload-supabase-bucket": "^1.0.0",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
