@@ -1,16 +1,16 @@
-import { MetadataRoute } from 'next';
-import { getProjects } from '@/lib/strapi';
+import { getProjects } from "@/lib/strapi";
+import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://portfolio.yulianguinand.com';
+  const baseUrl = "https://yulianguinand.fr";
   const now = new Date();
 
   const staticRoutes = [
-    { route: '', priority: 1.0, changeFrequency: 'weekly' as const },
-    { route: '/work', priority: 0.9, changeFrequency: 'weekly' as const },
-    { route: '/projects', priority: 0.8, changeFrequency: 'weekly' as const },
-    { route: '/photos', priority: 0.8, changeFrequency: 'weekly' as const },
-    { route: '/documents', priority: 0.8, changeFrequency: 'monthly' as const },
+    { route: "", priority: 1.0, changeFrequency: "weekly" as const },
+    { route: "/work", priority: 0.9, changeFrequency: "weekly" as const },
+    { route: "/projects", priority: 0.8, changeFrequency: "weekly" as const },
+    { route: "/photos", priority: 0.8, changeFrequency: "weekly" as const },
+    { route: "/documents", priority: 0.8, changeFrequency: "monthly" as const },
   ];
 
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((item) => ({
@@ -24,7 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const projectEntries: MetadataRoute.Sitemap = projects.map((p) => ({
     url: `${baseUrl}/work/${p.slug}`,
     lastModified: p.updatedAt ? new Date(p.updatedAt) : now,
-    changeFrequency: 'weekly',
+    changeFrequency: "weekly",
     priority: 0.9,
   }));
 

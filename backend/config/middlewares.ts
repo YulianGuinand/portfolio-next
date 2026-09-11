@@ -26,7 +26,17 @@ const config: Core.Config.Middlewares = [
       },
     },
   },
-  "strapi::cors",
+  {
+    name: "strapi::cors",
+    config: {
+      origin: [
+        "https://yulianguinand.fr",
+        "https://www.yulianguinand.fr",
+        "http://localhost:3000",
+      ],
+      credentials: true,
+    },
+  },
   "strapi::poweredBy",
   "strapi::query",
   "strapi::body",

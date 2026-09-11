@@ -1,19 +1,19 @@
-import { Metadata } from 'next';
-import WorkClient from './WorkClient';
-import { getProjects } from '@/lib/strapi';
+import { getProjects } from "@/lib/strapi";
+import { Metadata } from "next";
+import WorkClient from "./WorkClient";
 
 export const metadata: Metadata = {
-  title: 'Projets & Réalisations',
+  title: "Projets & Réalisations",
   description:
-    'Découvrez les projets majeurs conçus par Yulian Guinand : architectures web, applications fullstack (Next.js, Golang, PHP, C#) et plateformes interactives.',
+    "Découvrez les projets majeurs conçus par Yulian Guinand : architectures web, applications fullstack (Next.js, Golang, PHP, C#) et plateformes interactives.",
   alternates: {
-    canonical: 'https://portfolio.yulianguinand.com/work',
+    canonical: "https://yulianguinand.fr/work",
   },
   openGraph: {
-    title: 'Projets & Réalisations — Yulian Guinand',
+    title: "Projets & Réalisations — Yulian Guinand",
     description:
-      'Découvrez les projets majeurs conçus par Yulian Guinand : architectures web, applications fullstack et plateformes interactives.',
-    url: 'https://portfolio.yulianguinand.com/work',
+      "Découvrez les projets majeurs conçus par Yulian Guinand : architectures web, applications fullstack et plateformes interactives.",
+    url: "https://yulianguinand.fr/work",
   },
 };
 

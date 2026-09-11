@@ -1,21 +1,20 @@
-import React from 'react';
-import { Metadata } from 'next';
-import Link from 'next/link';
-import OptimizedImage from '@/components/OptimizedImage/OptimizedImage';
-import { notFound } from 'next/navigation';
+import OptimizedImage from "@/components/OptimizedImage/OptimizedImage";
+import StrapiBlocks from "@/components/StrapiBlocks/StrapiBlocks";
 import {
-  FaExternalLinkAlt,
-  FaGithub,
-  FaFilePdf,
-  FaArrowRight,
-} from 'react-icons/fa';
-import {
-  getProjects,
-  getProjectBySlug,
   getNextProject,
+  getProjectBySlug,
+  getProjects,
   getStrapiMediaUrl,
-} from '@/lib/strapi';
-import StrapiBlocks from '@/components/StrapiBlocks/StrapiBlocks';
+} from "@/lib/strapi";
+import { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import {
+  FaArrowRight,
+  FaExternalLinkAlt,
+  FaFilePdf,
+  FaGithub,
+} from "react-icons/fa";
 
 interface PageProps {
   params: {
@@ -30,16 +29,18 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const project = await getProjectBySlug(params.slug);
   if (!project) {
     return {
-      title: 'Projet introuvable',
+      title: "Projet introuvable",
     };
   }
 
   const coverUrl = getStrapiMediaUrl(project.coverImage);
-  const canonicalUrl = `https://portfolio.yulianguinand.com/work/${project.slug}`;
+  const canonicalUrl = `https://yulianguinand.fr/work/${project.slug}`;
 
   return {
     title: `${project.title} — ${project.category}`,
@@ -63,7 +64,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         : [],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: `${project.title} — ${project.category}`,
       description: project.shortDescription,
       images: coverUrl ? [coverUrl] : [],
@@ -82,46 +83,46 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   const coverUrl = getStrapiMediaUrl(project.coverImage);
 
   const jsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': [
+    "@context": "https://schema.org",
+    "@graph": [
       {
-        '@type': 'BreadcrumbList',
+        "@type": "BreadcrumbList",
         itemListElement: [
           {
-            '@type': 'ListItem',
+            "@type": "ListItem",
             position: 1,
-            name: 'Accueil',
-            item: 'https://portfolio.yulianguinand.com',
+            name: "Accueil",
+            item: "https://yulianguinand.fr",
           },
           {
-            '@type': 'ListItem',
+            "@type": "ListItem",
             position: 2,
-            name: 'Projets',
-            item: 'https://portfolio.yulianguinand.com/work',
+            name: "Projets",
+            item: "https://yulianguinand.fr/work",
           },
           {
-            '@type': 'ListItem',
+            "@type": "ListItem",
             position: 3,
             name: project.title,
-            item: `https://portfolio.yulianguinand.com/work/${project.slug}`,
+            item: `https://yulianguinand.fr/work/${project.slug}`,
           },
         ],
       },
       {
-        '@type': 'CreativeWork',
+        "@type": "CreativeWork",
         name: project.title,
         headline: project.title,
         description: project.shortDescription,
         image: coverUrl || undefined,
         creator: {
-          '@type': 'Person',
-          name: 'Yulian Guinand',
-          url: 'https://portfolio.yulianguinand.com',
+          "@type": "Person",
+          name: "Yulian Guinand",
+          url: "https://yulianguinand.fr",
         },
         genre: project.category,
-        keywords: project.stack?.join(', '),
+        keywords: project.stack?.join(", "),
         dateCreated: project.year,
-        url: `https://portfolio.yulianguinand.com/work/${project.slug}`,
+        url: `https://yulianguinand.fr/work/${project.slug}`,
       },
     ],
   };
@@ -185,19 +186,27 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             <div className="post-img post-img-1">
               <OptimizedImage
                 src={coverUrl}
-                alt={project.coverImage?.alternativeText || `${project.title} - Aperçu principal`}
+                alt={
+                  project.coverImage?.alternativeText ||
+                  `${project.title} - Aperçu principal`
+                }
                 width={1200}
                 height={700}
                 priority
-                style={{ width: '100%', height: 'auto', display: 'block' }}
+                style={{ width: "100%", height: "auto", display: "block" }}
                 sizes="(max-width: 900px) 100vw, 850px"
               />
             </div>
           )}
 
           {project.stack && project.stack.length > 0 && (
-            <div style={{ margin: '1.5em 0' }}>
-              <p style={{ marginBottom: '0.5em', color: 'var(--dark-text-secondary)' }}>
+            <div style={{ margin: "1.5em 0" }}>
+              <p
+                style={{
+                  marginBottom: "0.5em",
+                  color: "var(--dark-text-secondary)",
+                }}
+              >
                 Environnement &amp; Technologies :
               </p>
               <div className="post-meta-tags">
@@ -212,11 +221,18 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
           {project.pdfLinks && project.pdfLinks.length > 0 && (
             <div className="post-pdf-section">
-              <p style={{ color: 'var(--dark-text-secondary)', marginBottom: '0.25em' }}>
+              <p
+                style={{
+                  color: "var(--dark-text-secondary)",
+                  marginBottom: "0.25em",
+                }}
+              >
                 Documents et livrables associés :
               </p>
               {project.pdfLinks.map((pdf, idx) => {
-                const pdfHref = pdf.file ? getStrapiMediaUrl(pdf.file) : pdf.url || '#';
+                const pdfHref = pdf.file
+                  ? getStrapiMediaUrl(pdf.file)
+                  : pdf.url || "#";
                 return (
                   <a
                     key={idx}
@@ -225,7 +241,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                     rel="noopener noreferrer"
                     className="post-pdf-link"
                   >
-                    <FaFilePdf style={{ color: 'hsl(0 0% 60%)' }} />
+                    <FaFilePdf style={{ color: "hsl(0 0% 60%)" }} />
                     <span>{pdf.title}</span>
                   </a>
                 );
@@ -241,11 +257,14 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 <div key={img.id || index} className="post-img">
                   <OptimizedImage
                     src={galleryUrl}
-                    alt={img.alternativeText || `${project.title} - Capture d'écran ${index + 2}`}
+                    alt={
+                      img.alternativeText ||
+                      `${project.title} - Capture d'écran ${index + 2}`
+                    }
                     width={1200}
                     height={700}
                     loading="lazy"
-                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                    style={{ width: "100%", height: "auto", display: "block" }}
                     sizes="(max-width: 900px) 100vw, 850px"
                   />
                 </div>
@@ -258,9 +277,15 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             ← Retour à tous les projets
           </Link>
           {nextProject && (
-            <Link href={`/work/${nextProject.slug}`} className="next-project-link">
-              Projet suivant : <strong>{nextProject.title}</strong>{' '}
-              <FaArrowRight size="11px" style={{ display: 'inline', marginLeft: '4px' }} />
+            <Link
+              href={`/work/${nextProject.slug}`}
+              className="next-project-link"
+            >
+              Projet suivant : <strong>{nextProject.title}</strong>{" "}
+              <FaArrowRight
+                size="11px"
+                style={{ display: "inline", marginLeft: "4px" }}
+              />
             </Link>
           )}
         </footer>

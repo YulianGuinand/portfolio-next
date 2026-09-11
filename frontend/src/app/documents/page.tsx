@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Téléchargez le Curriculum Vitae, le dossier professionnel E5 et les ressources académiques de Yulian Guinand.",
   alternates: {
-    canonical: "https://portfolio.yulianguinand.com/documents",
+    canonical: "https://yulianguinand.fr/documents",
   },
   openGraph: {
     title: "Documents — Yulian Guinand",
     description:
       "Téléchargez le Curriculum Vitae, le dossier professionnel E5 et les ressources académiques de Yulian Guinand.",
-    url: "https://portfolio.yulianguinand.com/documents",
+    url: "https://yulianguinand.fr/documents",
   },
 };
 

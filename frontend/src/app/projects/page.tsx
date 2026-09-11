@@ -1,19 +1,19 @@
-import { Metadata } from 'next';
-import ProjectsClient from './ProjectsClient';
-import { getProjects } from '@/lib/strapi';
+import { getProjects } from "@/lib/strapi";
+import { Metadata } from "next";
+import ProjectsClient from "./ProjectsClient";
 
 export const metadata: Metadata = {
-  title: 'Répertoire des Projets',
+  title: "Répertoire des Projets",
   description:
-    'Liste détaillée des projets logiciels, architectures web, solutions SaaS et applications interactives développées par Yulian Guinand.',
+    "Liste détaillée des projets logiciels, architectures web, solutions SaaS et applications interactives développées par Yulian Guinand.",
   alternates: {
-    canonical: 'https://portfolio.yulianguinand.com/projects',
+    canonical: "https://yulianguinand.fr/projects",
   },
   openGraph: {
-    title: 'Répertoire des Projets — Yulian Guinand',
+    title: "Répertoire des Projets — Yulian Guinand",
     description:
-      'Liste détaillée des projets logiciels, architectures web, solutions SaaS et applications interactives développées par Yulian Guinand.',
-    url: 'https://portfolio.yulianguinand.com/projects',
+      "Liste détaillée des projets logiciels, architectures web, solutions SaaS et applications interactives développées par Yulian Guinand.",
+    url: "https://yulianguinand.fr/projects",
   },
 };
 
