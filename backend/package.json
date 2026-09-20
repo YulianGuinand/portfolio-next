@@ -5,7 +5,7 @@
   "description": "A Strapi application",
   "scripts": {
     "build": "strapi build",
-    "seed": "npm run build && node src/scripts/seed-runner.js",
+    "seed": "strapi build && node src/scripts/seed-runner.js",
     "console": "strapi console",
     "deploy": "strapi deploy",
     "dev": "strapi develop",
