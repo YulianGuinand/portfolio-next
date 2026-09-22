@@ -18,16 +18,10 @@ function paragraphsToBlocks(paragraphs: string[]) {
 // Find local file in frontend/public
 function resolvePublicFile(relativePath: string): string | null {
   const cleanPath = relativePath.replace(/^\//, "");
-  const candidates = [
-    path.resolve(process.cwd(), "../frontend/public", cleanPath),
-    path.resolve(__dirname, "../../../../frontend/public", cleanPath),
-    path.resolve(__dirname, "../../../frontend/public", cleanPath),
-  ];
+  const candidate = path.resolve(process.cwd(), "public", cleanPath);
 
-  for (const candidate of candidates) {
-    if (fs.existsSync(candidate)) {
-      return candidate;
-    }
+  if (fs.existsSync(candidate)) {
+    return candidate;
   }
   return null;
 }
