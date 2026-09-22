@@ -4,7 +4,7 @@ const { createStrapi } = require("@strapi/strapi");
 async function run() {
   console.log("[SEED-RUNNER] Initializing Strapi...");
   const strapi = await createStrapi({ distDir: "./dist" }).load();
-  let hasError = false; // Variable de contrôle
+  let hasError = false;
 
   try {
     console.log("[SEED-RUNNER] Running database seed...");
@@ -13,11 +13,18 @@ async function run() {
     console.log("[SEED-RUNNER] Seeding completed successfully.");
   } catch (error) {
     console.error("[SEED-RUNNER] Error during seeding:", error);
-    hasError = true; // On signale l'erreur
+    hasError = true;
   } finally {
     console.log("[SEED-RUNNER] Destroying Strapi instance...");
-    await strapi.destroy();
-    process.exit(hasError ? 1 : 0); // Quitte avec 1 si erreur, 0 si succès
+    try {
+      await strapi.destroy();
+    } catch (destroyError) {
+      console.warn(
+        "[SEED-RUNNER] Ignored error during teardown:",
+        destroyError.message,
+      );
+    }
+    process.exit(hasError ? 1 : 0);
   }
 }
 
