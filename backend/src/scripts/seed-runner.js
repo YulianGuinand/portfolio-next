@@ -15,15 +15,8 @@ async function run() {
     console.error("[SEED-RUNNER] Error during seeding:", error);
     hasError = true;
   } finally {
-    console.log("[SEED-RUNNER] Destroying Strapi instance...");
-    try {
-      await strapi.destroy();
-    } catch (destroyError) {
-      console.warn(
-        "[SEED-RUNNER] Ignored error during teardown:",
-        destroyError.message,
-      );
-    }
+    console.log("[SEED-RUNNER] Exiting process...");
+    // On ignore strapi.destroy() pour esquiver le plantage asynchrone du pool pg
     process.exit(hasError ? 1 : 0);
   }
 }
