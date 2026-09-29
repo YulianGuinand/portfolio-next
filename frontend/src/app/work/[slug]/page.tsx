@@ -127,6 +127,15 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         keywords: project.stack?.join(", "),
         dateCreated: project.year,
         url: `https://yulianguinand.fr/work/${project.slug}`,
+        contentLocation: {
+          "@type": "Place",
+          name: "Bourgogne-Franche-Comté",
+          address: {
+            "@type": "PostalAddress",
+            addressRegion: "Bourgogne-Franche-Comté",
+            addressCountry: "FR",
+          },
+        },
       },
     ],
   };

@@ -85,7 +85,9 @@ const WorkClient: React.FC<WorkClientProps> = ({ projects = [] }) => {
 
   return (
     <div className="container page-work" ref={container}>
-      <h1 className="sr-only">Projets & Réalisations — Yulian Guinand</h1>
+      <h1 className="sr-only">
+        Projets Web &amp; Applications sur-mesure conçus en Bourgogne-Franche-Comté — Yulian Guinand
+      </h1>
       {renderCol(col1, 0)}
       {renderCol(col2, 1)}
       {renderCol(col3, 2)}

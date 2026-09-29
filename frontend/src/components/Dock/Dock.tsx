@@ -85,6 +85,17 @@ const iconMap: Record<DockIconKey, IconType> = {
   envelope: FaEnvelope,
 };
 
+const DEFAULT_DOCK_ITEMS: DockItemData[] = [
+  { id: 1, order: 1, label: 'Accueil', path: '/', iconKey: 'home', external: false },
+  { id: 2, order: 2, label: 'Projets en vedette', path: '/work', iconKey: 'palette', external: false },
+  { id: 3, order: 3, label: 'Répertoire des projets', path: '/projects', iconKey: 'folder', external: false },
+  { id: 4, order: 4, label: 'Galerie Photos', path: '/photos', iconKey: 'camera', external: false },
+  { id: 5, order: 5, label: 'Documents', path: '/documents', iconKey: 'file', external: false },
+  { id: 6, order: 6, label: 'Profil LinkedIn de Yulian Guinand', path: 'https://www.linkedin.com/in/yulian-guinand/', iconKey: 'linkedin', external: true },
+  { id: 7, order: 7, label: 'Profil GitHub de Yulian Guinand', path: 'https://github.com/YulianGuinand', iconKey: 'github', external: true },
+  { id: 8, order: 8, label: 'Contacter Yulian Guinand par email', path: 'mailto:yulianguinand@etik.com', iconKey: 'envelope', external: true },
+];
+
 interface DockProps {
   items?: DockItemData[];
 }
@@ -124,11 +135,8 @@ const Dock: React.FC<DockProps> = ({ items = [] }) => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (!items || items.length === 0) {
-    return null;
-  }
-
-  const sortedItems = [...items].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  const activeItems = items && items.length > 0 ? items : DEFAULT_DOCK_ITEMS;
+  const sortedItems = [...activeItems].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
   return (
     <nav

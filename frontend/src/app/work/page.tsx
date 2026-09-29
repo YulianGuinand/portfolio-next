@@ -3,16 +3,16 @@ import { Metadata } from "next";
 import WorkClient from "./WorkClient";
 
 export const metadata: Metadata = {
-  title: "Projets & Réalisations",
+  title: "Projets & Réalisations Web — Bourgogne-Franche-Comté",
   description:
-    "Découvrez les projets majeurs conçus par Yulian Guinand : architectures web, applications fullstack (Next.js, Golang, PHP, C#) et plateformes interactives.",
+    "Découvrez les architectures web, applications SaaS et plateformes développées par Yulian Guinand pour des entreprises et structures régionales.",
   alternates: {
     canonical: "https://yulianguinand.fr/work",
   },
   openGraph: {
-    title: "Projets & Réalisations — Yulian Guinand",
+    title: "Projets & Réalisations Web — Bourgogne-Franche-Comté | Yulian Guinand",
     description:
-      "Découvrez les projets majeurs conçus par Yulian Guinand : architectures web, applications fullstack et plateformes interactives.",
+      "Découvrez les architectures web, applications SaaS et plateformes développées par Yulian Guinand pour des entreprises et structures régionales.",
     url: "https://yulianguinand.fr/work",
   },
 };

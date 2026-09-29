@@ -5,6 +5,8 @@
 @import "./projects/projects.css";
 @import "./documents/documents.css";
 @import "./work/[slug]/project-detail.css";
+@import "./home.css";
+@import "lenis/dist/lenis.css";
 
 :root {
   font-family:
@@ -36,6 +38,7 @@ body {
   min-height: 100vh;
   background-color: var(--dark-bg-color);
   color: var(--dark-text-color);
+  overflow-x: hidden;
 }
 
 img {
@@ -124,38 +127,6 @@ button:hover {
   .container.page-post {
     width: 100%;
   }
-}
-
-/* Home / Hero */
-.hero-header {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 100000;
-}
-
-.hero-subtitle {
-  color: var(--dark-text-secondary);
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 20px;
-  margin-top: 2px;
-}
-
-.live-clock {
-  position: absolute;
-  top: 2em;
-  left: 2em;
-  z-index: 100000;
-}
-
-.live-clock p {
-  font-family: var(--font-jetbrains), "JetBrains Mono", monospace;
-  font-weight: 500;
-  font-size: 13px;
-  color: var(--dark-text-tertiary);
 }
 
 /* Accessibilité et SEO (Masquage visuel tout en restant accessible aux lecteurs d'écran et robots) */

@@ -1,4 +1,5 @@
 import Dock from "@/components/Dock/Dock";
+import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
 import PageTransition from "@/components/PageTransition/PageTransition";
 import { getGlobalSettings, getStrapiMediaUrl } from "@/lib/strapi";
 import type { Metadata, Viewport } from "next";
@@ -29,10 +30,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const siteName = global?.siteName || "Yulian Guinand";
   const defaultTitle =
     global?.defaultSeoTitle ||
-    `${siteName} — Développement Web & Solutions Digitales`;
+    `${siteName} — Développeur Web & Applications | Besançon & Franche-Comté`;
   const defaultDescription =
     global?.defaultSeoDescription ||
-    "Portfolio officiel de Yulian Guinand. Concepteur développeur web & architectures fullstack (Next.js, TypeScript, Golang, PHP, C#). BTS SIO option SLAM.";
+    "Concepteur développeur web indépendant en Bourgogne-Franche-Comté. Création d'applications métier, SaaS et sites sur-mesure performants à Besançon, Dijon et Belfort.";
   const ogImageUrl = global?.defaultOgImage
     ? getStrapiMediaUrl(global.defaultOgImage)
     : "https://yulianguinand.fr/site-icon.png";
@@ -50,16 +51,23 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: [
       siteName,
       "Développeur Web",
+      "Développeur Web Besançon",
+      "Développeur Bourgogne-Franche-Comté",
+      "Création site internet Besançon",
       "Développeur FullStack",
+      "Développeur Freelance Doubs",
+      "Applications Web sur-mesure",
+      "SaaS",
       "Next.js",
       "TypeScript",
       "Golang",
       "PostgreSQL",
-      "BTS SIO",
-      "SLAM",
-      "Portfolio Développeur",
       "Architecture Web",
       "Solutions Digitales",
+      "Besançon",
+      "Dijon",
+      "Belfort",
+      "Bourgogne-Franche-Comté",
       "France",
     ],
     authors: [{ name: siteName }],
@@ -115,24 +123,106 @@ export default async function RootLayout({
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: siteName,
-    jobTitle: "Développeur Web Fullstack & Architecte Logiciel",
-    url: "https://yulianguinand.fr",
-    sameAs: [
-      "https://github.com/YulianGuinand",
-      "https://www.linkedin.com/in/yulian-guinand/",
-    ],
-    knowsAbout: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Golang",
-      "PHP",
-      "PostgreSQL",
-      "C#",
-      "Web Architecture",
-      "Strapi",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://yulianguinand.fr/#person",
+        name: siteName,
+        jobTitle: "Concepteur & Développeur Web Fullstack",
+        url: "https://yulianguinand.fr",
+        sameAs: [
+          "https://github.com/YulianGuinand",
+          "https://www.linkedin.com/in/yulian-guinand/",
+        ],
+        knowsAbout: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Golang",
+          "PHP",
+          "PostgreSQL",
+          "C#",
+          "Web Architecture",
+          "Strapi",
+          "Développement SaaS",
+        ],
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://yulianguinand.fr/#business",
+        name: `${siteName} — Développement Web & Solutions Digitales`,
+        url: "https://yulianguinand.fr",
+        logo: "https://admin.yulianguinand.fr/uploads/site_icon_57a1c1153d.png",
+        image: "https://admin.yulianguinand.fr/uploads/site_icon_57a1c1153d.png",
+        description:
+          "Création de sites internet sur-mesure, refonte et développement d'applications web et plateformes SaaS en Bourgogne-Franche-Comté (Besançon, Dijon, Belfort).",
+        priceRange: "€€",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Besançon",
+          postalCode: "25000",
+          addressRegion: "Bourgogne-Franche-Comté",
+          addressCountry: "FR",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 47.2378,
+          longitude: 6.0241,
+        },
+        areaServed: [
+          {
+            "@type": "AdministrativeArea",
+            name: "Bourgogne-Franche-Comté",
+          },
+          {
+            "@type": "City",
+            name: "Besançon",
+          },
+          {
+            "@type": "City",
+            name: "Dijon",
+          },
+          {
+            "@type": "City",
+            name: "Belfort",
+          },
+          {
+            "@type": "AdministrativeArea",
+            name: "Doubs",
+          },
+        ],
+        sameAs: [
+          "https://github.com/YulianGuinand",
+          "https://www.linkedin.com/in/yulian-guinand/",
+        ],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Services de développement web et logiciel",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Création et refonte de site internet vitrine et d'entreprise",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Développement d'applications web et plateformes SaaS sur-mesure",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Architecture logicielle et développement d'APIs performantes",
+              },
+            },
+          ],
+        },
+      },
     ],
   };
 
@@ -148,6 +238,7 @@ export default async function RootLayout({
         />
       </head>
       <body>
+        <SmoothScroll />
         <Link
           href="/"
           className="site-brand"

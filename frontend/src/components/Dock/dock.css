@@ -1,18 +1,19 @@
 .dock-container {
   width: max-content;
   position: fixed;
-  bottom: 0;
+  bottom: 1.5em;
   left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 0.5em 0.25em;
+  transform: translateX(-50%);
+  padding: 0.5em 0.35em;
   display: flex;
   justify-content: center;
   background-color: var(--dark-bg-color);
   border: 1px solid var(--dark-card-border);
   border-radius: 40px;
-  transform-origin: center;
   cursor: pointer;
   z-index: 1000000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
 }
 
 .dock {
@@ -49,8 +50,14 @@
 }
 
 @media (max-width: 900px) {
+  .dock-container {
+    bottom: 1em;
+    max-width: 96vw;
+    padding: 0.35em 0.2em;
+  }
+
   .dock-item {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
   }
 }

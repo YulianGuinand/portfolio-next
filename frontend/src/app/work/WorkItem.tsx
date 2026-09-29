@@ -48,11 +48,14 @@ const WorkItem: React.FC<WorkItemProps> = ({
       </div>
       {type !== 'img' && (
         <div className="work-item-cta">
-          <Link href={url}>
+          <Link
+            href={url}
+            aria-label={`Étude de cas du projet ${workName} — Architecture et développement`}
+          >
             {type === 'blog' ? (
-              <button type="button">Lire le Post</button>
+              <button type="button">Lire l&apos;étude de cas</button>
             ) : type === 'article' ? (
-              <button type="button">Voir l&apos;Article</button>
+              <button type="button">Découvrir l&apos;étude de cas</button>
             ) : null}
           </Link>
         </div>
