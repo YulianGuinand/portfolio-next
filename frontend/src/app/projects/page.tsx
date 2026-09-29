@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Liste détaillée des projets logiciels, architectures web, solutions SaaS et applications interactives développées par Yulian Guinand.",
   alternates: {
-    canonical: "https://yulianguinand.fr/projects",
+    canonical: "https://yulianguinand.fr/work",
   },
   openGraph: {
     title: "Répertoire des Projets — Yulian Guinand",

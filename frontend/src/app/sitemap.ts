@@ -13,16 +13,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { route: "/documents", priority: 0.8, changeFrequency: "monthly" as const },
   ];
 
-  const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((item) => ({
-    url: `${baseUrl}${item.route}`,
-    lastModified: now,
-    changeFrequency: item.changeFrequency,
-    priority: item.priority,
-  }));
+  const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((item) => {
+    const path = item.route
+      ? item.route.startsWith("/")
+        ? item.route
+        : `/${item.route}`
+      : "";
+    const cleanUrl = `${baseUrl}${path}`.replace(/\/+$/, "");
+
+    return {
+      url: cleanUrl || baseUrl,
+      lastModified: now,
+      changeFrequency: item.changeFrequency,
+      priority: item.priority,
+    };
+  });
 
   const projects = await getProjects();
   const projectEntries: MetadataRoute.Sitemap = projects.map((p) => ({
-    url: `${baseUrl}/work/${p.slug}`,
+    url: `${baseUrl}/work/${p.slug}`.replace(/\/+$/, ""),
     lastModified: p.updatedAt ? new Date(p.updatedAt) : now,
     changeFrequency: "weekly",
     priority: 0.9,

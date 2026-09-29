@@ -36,6 +36,10 @@ export async function generateMetadata({
   if (!project) {
     return {
       title: "Projet introuvable",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
